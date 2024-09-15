@@ -33,7 +33,7 @@ if [ -z "${TAG}" ]; then
     echo '4: optuna learn'
     echo '5: simulation'
 
-    read -p "Enter 1,2,3,4,5 > " tag
+    read -p "Enter 1,2,3,4,5 > " TAG
 fi
 
 if [ !"${TAG}" = '1' ] && [ !"${TAG}" = '2' ] && [ !"${TAG}" = '3' ] && [ !"${TAG}" = '4' ] && [ !"${TAG}" = '5' ]; then
@@ -60,19 +60,19 @@ cp -r "${DIR}" learn/
 PYTHON_COMMAND='python main.py'
 
 if [ "${TAG}" = '2' ]; then
-    mpiexec -n "${CORE}" "${PYTHON_COMMAND}" -u True -l True
+    mpiexec -n "${CORE}" ${PYTHON_COMMAND} -u True -l True
 fi
 
 if [ "${TAG}" = '3' ]; then
-    "${PYTHON_COMMAND}" -l True -s "${PROD_CHECK}"
+    ${PYTHON_COMMAND} -l True -s "${PROD_CHECK}"
 fi
 
 if [ "${TAG}" = '4' ]; then
-    "${PYTHON_COMMAND}" -o True -s "${PROD_CHECK}"
+    ${PYTHON_COMMAND} -o True -s "${PROD_CHECK}"
 fi
 
 if [ "${TAG}" = '5' ]; then
-    "${PYTHON_COMMAND}" -b True
+    ${PYTHON_COMMAND} -b True
 fi
 
 rm -rf storage
