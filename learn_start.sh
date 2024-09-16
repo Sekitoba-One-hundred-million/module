@@ -43,12 +43,12 @@ fi
 
 pip install --extra-index-url http://"${PIPSERVER}" --trusted-host "${PIPSERVER}" -U SekitobaLibrary
 
+BASE='        self.'
 rm -rf "${WRITE_FILE_NAME}"
 echo 'class Name:' >> "${WRITE_FILE_NAME}"
 echo '    def __init__( self ):' >> "${WRITE_FILE_NAME}"
 
-for FILE_NAME in "${FILE_LIST}"; do
-  BASE='        self.'
+for FILE_NAME in ${FILE_LIST}; do
   ARR=(${FILE_NAME//./ })
   NAME=${ARR[0]}
   echo "${BASE}${NAME} = \"${NAME}\"" >> "${WRITE_FILE_NAME}"
