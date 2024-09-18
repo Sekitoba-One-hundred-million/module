@@ -4,7 +4,7 @@ WRITE_FILE_NAME="${DIR}/name.py"
 TAG=''
 PROD_CHECK='test'
 CORE='6'
-PIPSERVER='100.88.209.66'
+PIPSERVER='100.95.241.19'
 
 while getopts ts-: opt; do
   OPTARG="${!OPTIND}"
