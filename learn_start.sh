@@ -8,9 +8,9 @@ PIPSERVER='100.95.241.19'
 
 while getopts ts-: opt; do
   OPTARG="${!OPTIND}"
-  [[ "${OPT}" = - ]] && OPT="-${OPTARG}"
+  [[ "${opt}" = - ]] && opt="-${OPTARG}"
     
-  case "${OPT}" in
+  case "${opt}" in
     s|-state)
       PROD_CHECK="${OPTARG}"
       shift
