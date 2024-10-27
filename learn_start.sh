@@ -6,7 +6,7 @@ PROD_CHECK='test'
 CORE='6'
 PIPSERVER='100.95.241.19'
 
-while getopts ts-: opt; do
+while getopts tsc-: opt; do
   OPTARG="${!OPTIND}"
   [[ "${opt}" = - ]] && opt="-${OPTARG}"
     
