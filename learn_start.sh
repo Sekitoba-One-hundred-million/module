@@ -60,7 +60,8 @@ cp -r "${DIR}" learn/
 PYTHON_COMMAND='python main.py'
 
 if [ "${TAG}" = '2' ]; then
-  mpiexec -n "${CORE}" ${PYTHON_COMMAND} -u True -l True
+  mpiexec -n "${CORE}" ${PYTHON_COMMAND} -u True
+  ${PYTHON_COMMAND} -l True -s "${PROD_CHECK}"
 fi
 
 if [ "${TAG}" = '3' ]; then
